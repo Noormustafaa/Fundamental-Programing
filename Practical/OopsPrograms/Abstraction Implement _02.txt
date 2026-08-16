@@ -1,0 +1,59 @@
+Abstraction Implement _02
+#include <iostream>
+
+// Abstract Class (The Interface)
+class Appliance {
+public:
+    // Pure Virtual Functions (Abstraction Contract)
+    virtual void turnOn() = 0;
+    virtual void turnOff() = 0;
+    
+    virtual ~Appliance() {} // Virtual destructor for proper cleanup
+};
+
+// Concrete Class implementing the abstraction
+class SmartBulb : public Appliance {
+private:
+    // Hidden internal state and complex low-level operations
+    int currentVoltage;
+    bool isConnectedToWiFi;
+
+    void establishHandshake() {
+        std::cout << "[Internal] Connecting to local Wi-Fi protocol...\n";
+        isConnectedToWiFi = true;
+    }
+
+    void regulateVoltage(int volts) {
+        currentVoltage = volts;
+        std::cout << "[Internal] Regulating circuit voltage to " << currentVoltage << "V.\n";
+    }
+
+public:
+    SmartBulb() : currentVoltage(0), isConnectedToWiFi(false) {}
+
+    // Exposing simple interface methods to the user
+    void turnOn() override {
+        establishHandshake();
+        regulateVoltage(120);
+        std::cout << "Result: Smart Bulb is now ON.\n";
+    }
+
+    void turnOff() override {
+        regulateVoltage(0);
+        isConnectedToWiFi = false;
+        std::cout << "Result: Smart Bulb is now OFF.\n";
+    }
+};
+
+int main() {
+    // We interact with the object via its abstract base interface pointer
+    Appliance* myLight = new SmartBulb();
+
+    // Simple interface calls - user doesn't care about voltage or Wi-Fi logic
+    myLight->turnOn();
+    std::cout << "-----------------------------------\n";
+    myLight->turnOff();
+
+    delete myLight;
+    return 0;
+}
