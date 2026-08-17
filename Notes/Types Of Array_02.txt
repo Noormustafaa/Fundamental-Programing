@@ -55,6 +55,22 @@ print(grades[2][0])  # Output: 75
 
 
 
+# Pure 2D Array where Row 0 contains Column Names
+sheet = [
+    ["Name", "Maths", "Science"],  # Row 0: Headings / Column Names
+    ["Ali",   85,      90],         # Row 1: Ali's Data
+    ["Sara",  92,      88]          # Row 2: Sara's Data
+]
+
+# 1. Print Column Headings
+print(sheet[0])  # Output: ['Name', 'Maths', 'Science']
+
+# 2. Accessing "Sara" (Row 2, Col 0)
+print(sheet[2][0])  # Output: Sara
+
+# 3. Accessing "Sara's Science Marks" (Row 2, Col 2)
+print(sheet[2][2])  # Output: 88
+
 
 
 
