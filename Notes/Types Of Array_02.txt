@@ -1,0 +1,87 @@
+Types Of Array_02
+
+Array types refer to their dimensions—which simply means how many directions or coordinates (indexes) you need to locate a specific item inside the array.
+
+1. 1D Array (One-Dimensional Array)
+A 1D array is a single line or list of items stored side-by-side. You only need one index to find any item.
+
+Real-World Analogy: A single row of lockers or a simple shopping list.
+
+Code Example:
+
+# A list of daily temperatures
+temperatures = [30, 32, 29, 31, 28]
+
+# To get the temperature on day 1 (index 0):
+print(temperatures[0])  # Output: 30
+
+
+2. 2D Array (Two-Dimensional Array)
+A 2D array adds a second direction, arranging items in rows and columns like a grid or table. You need two indexes [row][column] to locate a specific item.
+
+Real-World Analogy: A chessboard, a spreadsheet, or seats in a movie theater (e.g., Row 3, Seat 5).
+
+Code Example:
+
+# A 3x3 grid (like Tic-Tac-Toe or a table)
+grid = [
+    [1, 2, 3],  # Row 0
+    [4, 5, 6],  # Row 1
+    [7, 8, 9]   # Row 2
+]
+
+# Accessing Row 1, Column 2 (value: 6):
+print(grid[1][2])  # Output: 6
+
+
+Spread Sheet ex:
+
+# 2D Array: Rows = Students, Columns = Subjects
+grades = [
+    [85, 90, 78],  # Row 0: Ali ke marks
+    [92, 88, 95],  # Row 1: Sara ke marks
+    [70, 65, 80]   # Row 2: Zain ke marks
+]
+
+sara_science = grades[1][1]
+print(sara_science)  # Output: 88
+
+Example 2: Value Update Karna (Spreadsheet Cell Edit)
+
+Requirement: Zain ke Maths (Row 2, Col 0) ke marks re-checking ke baad 70 se badha kar 75 karne hain
+
+grades[2][0] = 75
+print(grades[2][0])  # Output: 75
+
+
+
+
+
+
+
+3. 3D Array (Three-Dimensional Array)
+A 3D array adds depth. It is essentially a stack or collection of 2D grids. You need three indexes [depth/page][row][column] to find an item.
+
+Real-World Analogy: An apartment building (Building Number, Floor Number, Apartment Number) or a Rubik's cube.
+
+Code Example:
+
+
+# Two 2x2 grids stacked together
+cube = [
+    # Page 0 (Grid 1)
+    [[1, 2], 
+     [3, 4]],
+
+    # Page 1 (Grid 2)
+    [[5, 6], 
+     [7, 8]]
+]
+
+# Accessing Page 1, Row 0, Column 1 (value: 6):
+print(cube[1][0][1])  # Output: 6
+
+
+4. Multidimensional Arrays (ND Arrays)An array can theoretically have 4, 5, or $N$ dimensions. Higher dimensions are just arrays containing lower-dimensional arrays inside them.
+
+4D Array: A series of 3D cubes tracked over time (e.g., 3D video frames across time).Usage: Used extensively in machine learning, scientific computing, physics simulations, and image/video processing (e.g., an RGB image is a 3D array of height $\times$ width $\times$ color channels).
